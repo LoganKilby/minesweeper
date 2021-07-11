@@ -28,6 +28,10 @@ struct mouse_input
 internal void
 PollMouseInput(mouse_input *Input)
 {
+    *Input = {};
+    
+    Input->CursorPosition = GetMousePosition();
+    
     if(IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
     {
         Input->LeftMouseButtonPressed = 1;
@@ -52,42 +56,6 @@ PollMouseInput(mouse_input *Input)
     {
         Input->MiddleMouseButtonPressed = 1;
     }
-}
-
-// NOTE: From Origin to Dest, order determines signed distance
-internal Vector2 
-PixelDistanceSigned(Vector2 Origin, Vector2 Dest)
-{
-    Vector2 Result = {};
-    
-    int x1 = fabs(Origin.x);
-    int x2 = fabs(Dest.x);
-    
-    int y1 = fabs(Origin.y);
-    int y2 = fabs(Dest.y);
-    
-    int DistanceX = x1 < x2 ? x2 - x1 : x1 - x2;
-    int DistanceY = y1 < y2 ? y2 - y1 : y1 - y2;
-    
-    if(Origin.x < Dest.x)
-    {
-        Result.x = DistanceX;
-    }
-    else
-    {
-        Result.x = -DistanceX;
-    }
-    
-    if(Origin.y < Dest.y)
-    {
-        Result.y = DistanceY;
-    }
-    else
-    {
-        Result.y = -DistanceY;
-    }
-    
-    return Result;
 }
 
 int main()
@@ -127,16 +95,10 @@ int main()
                 GlobalRunning = false;
             }
             
-            Input = {};
-            Input.CursorPosition = GetMousePosition();
             PollMouseInput(&Input);
             float FrameTime = GetFrameTime();
             UpdateMinesweeperGame(&GameState, &DefaultTilemap, Input, 
                                   FrameTime, WindowDimensions.Width, WindowDimensions.Height);
-            
-            // Released button presses are processed every frame and should be cleared
-            Input.LeftMouseButtonReleased = 0;
-            Input.RightMouseButtonReleased = 0;
             
             // NOTE: Draw
             BeginDrawing();
