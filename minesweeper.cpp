@@ -304,6 +304,9 @@ InitMinesweeperGame(minesweeper_state *GameState, tilemap *Tilemap, window_dimen
     GameState->WindowWidth = WindowDimensions.Width;
     GameState->WindowHeight = WindowDimensions.Height;
     
+    // Texture assets from Spriters Resource ("Black Squirrel")
+    // https://www.spriters-resource.com/pc_computer/minesweeper/sheet/19849/
+    
     // NOTE: Alternatively I could parse the text file I generate that contains this info but... anyways
     GameState->TextureAtlas = LoadTexture("resources/textures/atlas/atlas.png");
     GameState->TextureCoordinates[BOMB] = { 80, 103, 16, 16 };
@@ -337,7 +340,7 @@ InitMinesweeperGame(minesweeper_state *GameState, tilemap *Tilemap, window_dimen
     GameState->HintTextureCoordinates[7] = { 64, 87, 16, 16 };
     GameState->HintTextureCoordinates[8] = { 48, 87, 16, 16 };
     
-    // I found an pixel artifact while using the digit textures from my atlas. At some point I decided to
+    // I found a pixel artifact while using the digit textures from my atlas. At some point I decided to
     // atlas together just the digit textures and that is working fine now
     GameState->TextTextureAtlas = LoadTexture("resources/textures/text/atlas.png");
     GameState->TextTextureCoordinates[0] = { 0, 0, 13, 23 };
