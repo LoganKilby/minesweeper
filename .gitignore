@@ -1,0 +1,8 @@
+
+*.exe
+*.ilk
+*.pdb
+*.obj
+notes.txt
+temp.txt
+todo.txt
