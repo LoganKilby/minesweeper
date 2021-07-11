@@ -1,0 +1,11 @@
+text_0.png: X: 0, Y: 0, W: 13, H: 23
+text_1.png: X: 13, Y: 0, W: 13, H: 23
+text_2.png: X: 26, Y: 0, W: 13, H: 23
+text_3.png: X: 39, Y: 0, W: 13, H: 23
+text_4.png: X: 0, Y: 23, W: 13, H: 23
+text_5.png: X: 13, Y: 23, W: 13, H: 23
+text_6.png: X: 26, Y: 23, W: 13, H: 23
+text_7.png: X: 39, Y: 23, W: 13, H: 23
+text_8.png: X: 0, Y: 46, W: 13, H: 23
+text_9.png: X: 13, Y: 46, W: 13, H: 23
+Image count: 10
