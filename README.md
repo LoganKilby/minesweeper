@@ -1,2 +1,2 @@
 # minesweeper
- A recreation of the classic Minesweeper game with it's retro look
+ A recreation of the classic Minesweeper game
