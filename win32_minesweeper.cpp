@@ -72,7 +72,6 @@ int main()
     
     if(IsWindowReady())
     {
-        //DisableCursor();
         SetMousePosition(WindowDimensions.Width / 2, WindowDimensions.Height / 2);
         Texture2D CursorTexture = LoadTexture("resources/textures/cursor/winxp_cursor.png");
         int CursorWidth = CursorTexture.width;
